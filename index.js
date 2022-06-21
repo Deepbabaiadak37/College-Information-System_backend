@@ -4,7 +4,8 @@ const cors = require('cors')
 const InitiateDb = require('./src/config/db')
 const userroutes = require('./src/routes/userrouters')
 
-const PORT = 3001 || process.env.PORT;
+const hostname=process.env.HOST;
+const port = process.env.PORT;
 
 var app = express()
 InitiateDb()
@@ -19,6 +20,6 @@ app.use('/profile-images',express.static('profile-uploads'))
 app.use('/userroutes',userroutes)
 
 
-app.listen(PORT,(req,res)=>{
-    console.log(`server started at port ${PORT}`)
+app.listen(port,hostname,(req,res)=>{
+    console.log(`Server running at http://${hostname}:${port}/`);
 })
