@@ -1,0 +1,40 @@
+const express = require('express')
+const validate = require('./validate')
+const router = express.Router()
+
+const signup = require('./signup')
+const login = require('./login')
+const logout = require('./logout')
+const notice=require('./noticeAdd')
+const hostelcomplain=require('./hostelcomplain')
+const teachermanage=require('./teachermanage')
+const admincourse=require('./course')
+const attendance=require('./attendance')
+const hostelnotice=require('./hostelnotice')
+const allotment=require('./allotment')
+const studymaterial=require('./studymaterial')
+const camarks=require('./camarks')
+const admin=require('./adminlogin')
+const forgotpssword=require('./forgotpassword')
+
+
+router.all('/auth/*',validate)
+
+router.use('/signup',signup)
+router.use('/login',login)
+router.use('/auth/logout',logout)
+router.use('/logout',logout)
+router.use('/hostelcomplain',hostelcomplain)
+router.use('/teachermanage',teachermanage)
+router.use('/addcourse',admincourse)
+router.use('/attendance',attendance)
+router.use('/allotment',allotment)
+router.use('/hostelnotice',hostelnotice)
+router.use('/admin/notice',notice)
+router.use('/studymaterial',studymaterial)
+router.use('/camarks',camarks)
+router.use('/admin',admin)
+router.use('/forgotpssword',forgotpssword)
+
+
+module.exports = router
