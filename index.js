@@ -18,10 +18,6 @@ app.use('/profile-images',express.static('profile-uploads'))
  
 app.use('/userroutes',userroutes)
 
-if(process.env.NODE_ENV=="production")
-{
-    app.use(express.static('../frontend/build'))
-}
 
 app.listen(PORT,(req,res)=>{
     console.log(`server started at port ${PORT}`)

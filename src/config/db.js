@@ -2,7 +2,7 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 
 
-const MONGOURI = process.env.DATABASE_URL || "mongodb://localhost:27017/UserDBjs"
+const MONGOURI = "mongodb+srv://deep:<password>@cluster0.ollr9.mongodb.net/?retryWrites=true&w=majority"
 
 const InitiateDb = async () => {
     try{
