@@ -27,7 +27,7 @@ router.post('/',upload.single('image'), async(req, res) => {
             year: req.body.year,
             coursename:req.body.coursename,
             about:req.body.about,
-            imageUrl: 'http://localhost:3001/images/' +req.file.originalname,
+            imageUrl: 'https://college-informaion-backend.herokuapp.com/images/' +req.file.originalname,
         })
         await newStudyMaterial.save().then(()=>{
             res.status(200).json({ status:200 })
